@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>              
+</head>
+<body>
+    
+    <h1>{{session['gold']}}</h1>
+
+    <form action="/process_money" method="post">
+        <label for="farm">Farm</label>
+        <input type="hidden" name="get_money" value="farm">
+        <p>Earns 10-20 Gold</p>
+        <input type="submit" value="Find_Gold">
+    </form>
+
+    <form action="/process_money" method="post">
+        <label for="cave">Cave</label>
+        <input type="hidden" name="get_money" value="cave">
+        <p>Ears 5-10 Gold</p>
+        <input type="submit" value="Find_Gold">
+    </form>
+
+    <form action="/process_money" method="post">
+        <label for="house">House</label>
+        <input type="hidden" name="get_money" value="house">
+        <p>Ears 2-5 Gold</p>
+        <input type="submit" value="Find_Gold">
+    </form>
+
+    <form action="/process_money" method="post">
+        <label for="casino">Casino</label>
+        <input type="hidden" name="get_money" value="casino">
+        <p>Ears/Takes 0-50 Gold</p>
+        <input type="submit" value="Find_Gold">
+    </form>
+
+    {% for message in activity %}
+        <li>{{message}}</li>
+    {% endfor %}
+
+</body>
+</html>
